@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contact %}
+
+<body class="is-preload">
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+      <div class="inner">
+
+        <!-- Header -->
+        <header id="header">
+          <div class="logo">
+            <a href="index.html">Local Service</a>
+          </div>
+        </header>
+
+
+        <!-- Services -->
+        <section class="services">
+          <h1>About Us</h1>
+          <p>Online Local Services is based e-com Company, founded by group of aspirant with consideration to put the world in more comfort zone via weaving new ideas and implementing it at ground level.</p>
+          
+          <p>With an idea of “Smart Way Easy Life” Online Local Services is home solution providing website. With Online Local Services website you can book your desired home service like electrician, plumber, carpenter, cleaner, painter, AC repair, Washing machine repair, and so many other services which serve directly to your door step in your desired timeslot and on affordable prices. In this way services it makes your life easy and full of comfort. Customer trust and safety is our profit so we have strict criteria for our vendors and supportive staff who are professionals and authenticated and verified by Police administration.</p>
+          <p>We are available 24*7 to assist you any time anywhere.</p>
+        </section>
+
+
+        <!-- Left Image -->
+        <section class="left-image">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="{% static 'assets/img/home.jpg' %}" alt="">
+              </div>
+              <div class="col-md-6">
+                <div class="right-content">
+                  <h4>Online Local Services</h4>
+                  <p>Our goal is to make it easier to search and find jobs. It is to save time and energy of aspirants as well as employers. And also, to provide suitable job to more and more peoples according to their skill set</p>
+                  <div class="primary-button">
+                    <a href="#">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+
+      <div class="inner">
+
+        <!-- Menu -->
+        <nav id="menu">
+          <ul>
+            <li><a href="{% url 'index' %}">Homepage</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
+          </ul>
+        </nav>
+
+        <!-- Featured Posts -->
+        <div class="featured-posts">
+          <div class="heading">
+            <h2>Featured Posts</h2>
+          </div>
+          <div class="owl-carousel owl-theme">
+            <a href="#">
+              <div class="featured-item">
+                <img src="{% static 'assets/img/home2.jpg' %}" alt="featured one">
+                <p></p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+          <p class="copyright">Copyright &copy; 2022 AK 
+            <br>Designed by <a rel="nofollow" href="https://www.facebook.com">Abhay Patel</a>
+          </p>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+{% endblock contact %}

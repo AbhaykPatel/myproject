@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contact %}
+
+<body class="is-preload">
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+      <div class="inner">
+
+        <!-- Header -->
+        <header id="header">
+          <div class="logo">
+            <a href="index.html">Local Service</a>
+          </div>
+        </header>
+
+        <!-- Banner -->
+        <section class="main-banner">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="banner-content">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="banner-caption">
+                        <h4>Hello, this is <em>Local Service</em> page.</h4><br>
+                        <p>Local Services, means those activities of daily living and self- management tasks that assist
+                          an individual to stay in his or her own home.</p>
+                        <div class="primary-button">
+                          <a href="#">Read More</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Services -->
+        <section class="services">
+          <h1>welcome to Online Local Service</h1>
+          <br>
+          <div class="container-fluid">
+            <div class="row">
+
+              <div class="col-md-4">
+                <a href="{% url 'carpenter' %}">
+                  <div class="service-item carpenter-item">
+                    <div class="icon"></div>
+                    <h4>Carpenter</h4>
+                    <p></p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-4">
+                <a href="{% url 'electrician' %}">
+                  <div class="service-item electrician-item">
+                    <div class="icon"></div>
+                    <h4>Electrician</h4>
+                    <p></p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-4">
+                <a href="{% url 'plumber' %}">
+                  <div class="service-item plumber-item">
+                    <div class="icon"></div>
+                    <h4>Plumber</h4>
+                    <p></p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-4">
+                <a href="{% url 'mason' %}">
+                  <div class="service-item mason-item">
+                    <div class="icon"></div>
+                    <h4>Mason Contractor</h4>
+                    <p></p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-4">
+                <a href="{% url 'painter' %}">
+                  <div class="service-item paint-item">
+                    <div class="icon"></div>
+                    <h4>Painter</h4>
+                    <p></p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-md-4">
+                <a href="{% url 'cleaning' %}">
+                  <div class="service-item cleaning-item">
+                    <div class="icon"></div>
+                    <h4>Home Cleaning</h4>
+                    <p></p>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+
+        <!-- Left Image -->
+        <section class="left-image">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="{% static 'assets/img/home.jpg' %}" alt="">
+              </div>
+              <div class="col-md-6">
+                <div class="right-content">
+                  <h4>Online Local Services</h4>
+                  <p>Our goal is to make it easier to search and find jobs. It is to save time and energy of aspirants
+                    as well as employers. And also, to provide suitable job to more and more peoples according to their
+                    skill set</p>
+                  <div class="primary-button">
+                    <a href="#">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+
+      <div class="inner">
+
+        <!-- Menu -->
+        <nav id="menu">
+          <ul>
+            <li><a href="{% url 'index' %}">Homepage</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <li><a href="{% url 'registerpage' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
+          </ul>
+        </nav>
+
+        <!-- Featured Posts -->
+        <div class="featured-posts">
+          <div class="heading">
+            <h2>Featured Posts</h2>
+          </div>
+          <div class="owl-carousel owl-theme">
+            <a href="#">
+              <div class="featured-item">
+                <img src="{% static 'assets/img/home2.jpg' %}" alt="featured one">
+                <p></p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+          <p class="copyright">Copyright &copy; 2022 AK
+            <br>Designed by <a rel="nofollow" href="https://www.facebook.com">Abhay Patel</a>
+          </p>
+        </footer>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+{% endblock contact %}

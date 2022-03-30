@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contact %}
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <div class="logo">
+                        <a href="index.html">Local Service</a>
+                    </div>
+                </header>
+
+
+                <!-- Left Image -->
+                <section class="left-image">
+                    <h1>Home-Cleaning</h1>
+                    <br>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="{% static 'assets/img/cleaning.jpg' %}" alt="">
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>
+                                        <p style="font-size: large;color: blue;">Visit Charge : ₹ 250*</p>
+                                    </li>
+                                    <li>
+                                        <h6> ₹ 199 will be charged for 1ST hour.</h6>
+                                    </li>
+                                    <li>
+                                        <h6> ₹ 99 will be charged for next 30 minutes following to 1st hour.</h6>
+                                    </li>
+                                    <li>
+                                        <h6> ₹ 99 will be charged in case of Inspection only.</h6>
+                                    </li>
+                                    <li>
+                                        <h6> Material procurement time will be included in service time.</h6>
+                                    </li>
+                                    <li>
+                                        <h6> Required Material cost is excluded from above cost.</h6>
+                                    </li>
+                                </ul>
+                                <div class="primary-button">
+                                    <a href="{% url 'schedule' %}">Booking</a>
+                                </div>
+                            </div>
+                        </div><br>
+                        <h6>Cleaning to your surrounding keeps you Healthy-wealthy and Prosperous.</h6>
+                    </div>
+                    <br>
+                    <h1> Services Under home cleaning</h1>
+                    <div class="row"><br>
+                        <div class="col-md-6">
+                            <ul>
+                                <li>Sweeping</li>
+                                <li>Vacuum cleaning</li>
+                                <li>Mat cleaning</li>
+                                <li>Toilet cleaning</li>
+                                <li>Pre and post marriage compound cleaning</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul>
+                                <li>Hotel cleaning</li>
+                                <li>Dishwashing</li>
+                                <li>Floor mopping</li>
+                                <li>Garden cleaning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+
+            <div class="inner">
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <ul>
+                        <li><a href="{% url 'index' %}">Homepage</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                        <li><a href="{% url 'register' %}">Register</a></li>
+                        <li><a href="{% url 'login' %}">LOGIN</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Featured Posts -->
+                <div class="featured-posts">
+                    <div class="heading">
+                        <h2>Featured Posts</h2>
+                    </div>
+                    <div class="owl-carousel owl-theme">
+                        <a href="#">
+                            <div class="featured-item">
+                                <img src="{% static 'assets/img/home2.jpg' %}" alt="featured one">
+                                <p></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">Copyright &copy; 2022 AK
+                        <br>Designed by <a rel="nofollow" href="https://www.facebook.com">Abhay Patel</a>
+                    </p>
+                </footer>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock contact %}

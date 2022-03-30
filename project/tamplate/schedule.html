@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contact %}
+
+<body class="is-preload">
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+      <div class="inner">
+
+        <!-- Header -->
+        <header id="header">
+          <div class="logo">
+            <a href="index.html">Local Service</a>
+          </div>
+        </header>
+
+
+        <!-- Contact Form -->
+        <section class="contact-form">
+          <div class="container-fluid">
+            <h1>Booking</h1>
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+                <form id="contact" action="" method="post">
+                  <div class="row">
+                    
+                    <div class="col-md-12">
+                      <fieldset>
+                        <input name="name" type="text" class="form-control" id="name" placeholder="name..." required="">
+                      </fieldset>
+                    </div>
+
+                    <div class="col-md-12">
+                      <fieldset>
+                        <input name="address" type="text" class="form-control" id="address" placeholder="address..." required="">
+                      </fieldset>
+                    </div>
+
+                    <div class="col-md-12">
+                      <fieldset>
+                        <input name="city" type="text" class="form-control" id="city" placeholder="city..." required="">
+                      </fieldset>
+                    </div>
+
+                    <div class="col-md-12">
+                      <fieldset>
+                        <input name="state" type="text" class="form-control" id="state" placeholder="state..." required="">
+                      </fieldset>
+                    </div>
+
+                    <div class="col-md-12">
+                      <fieldset>
+                        <input name="pincode" type="text" class="form-control" id="pincode" placeholder="PINcode..." required="">
+                      </fieldset>
+                    </div>
+
+                    <div class="col-md-12">
+                      <fieldset>
+                        <input name="date" type="date" class="form-control" id="date" placeholder="date..." required="">
+                      </fieldset>
+                    </div>
+
+                    <div class="col-md-12">
+                      <fieldset>
+                        <input name="time" type="time" class="form-control" id="time" placeholder="time..." required="">
+                      </fieldset>
+                    </div>
+
+                    <div class="col-md-12">
+                      <fieldset>
+                        <button type="submit">Booking</button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="col-md-6">
+                <!-- <div id="map">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1197183.8373802372!2d-1.9415093691103689!3d6.781986417238027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdb96f349e85efd%3A0xb8d1e0b88af1f0f5!2sKumasi+Central+Market!5e0!3m2!1sen!2sth!4v1532967884907"
+                    width="100%" height="420px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+
+      <div class="inner">
+
+        <!-- Menu -->
+        <nav id="menu">
+          <ul>
+            <li><a href="{% url 'index' %}">Homepage</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
+          </ul>
+        </nav>
+
+        <!-- Featured Posts -->
+        <div class="featured-posts">
+          <div class="heading">
+            <h2>Featured Posts</h2>
+          </div>
+          <div class="owl-carousel owl-theme">
+            <a href="#">
+              <div class="featured-item">
+                <img src="{% static 'assets/img/home2.jpg' %}" alt="featured one">
+                <p></p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+          <p class="copyright">Copyright &copy; 2022 AK
+            <br>Designed by <a rel="nofollow" href="https://www.facebook.com">Abhay Patel</a>
+          </p>
+        </footer>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+
+{% endblock contact %}

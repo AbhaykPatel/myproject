@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contact %}
+
+<body class="is-preload">
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+      <div class="inner">
+
+        <!-- Header -->
+        <header id="header">
+          <div class="logo">
+            <a href="index.html">Local Service</a>
+          </div>
+        </header>
+
+
+        <!-- Contact Form -->
+        <section class="contact-form">
+          <div class="container-fluid">
+            <h1>OTP verification</h1>
+            <br>
+            <div class="row">
+              <div class="col-md-12">
+                {% if msg %}
+                    <h4 style="color:red">{{msg}}</h4>
+                {% endif %}
+              </div>
+
+              <div class="col-md-6">
+                <form id="contact" action="{% url 'otpverify' %}" method="POST">
+                  {% csrf_token %}
+                  <div class="row">
+                    <div class="col-md-12">
+                      <fieldset>
+                        <input name="email" type="email" class="form-control" placeholder="email..."
+                          required="" value="{{ email }}" readonly>
+                      </fieldset>
+                    </div>
+                   <div class="col-md-12">
+                      <fieldset>
+                        <input name="otp" type="text" class="form-control" id="verify"
+                          placeholder="otp..." required="">
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <button type="submit">verify</button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+
+      <div class="inner">
+
+        <!-- Menu -->
+        <nav id="menu">
+          <ul>
+            <li><a href="{% url 'index' %}">Homepage</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
+          </ul>
+        </nav>
+
+        <!-- Featured Posts -->
+        <div class="featured-posts">
+          <div class="heading">
+            <h2>Featured Posts</h2>
+          </div>
+          <div class="owl-carousel owl-theme">
+            <a href="#">
+              <div class="featured-item">
+                <img src="{% static 'assets/img/home2.jpg' %}" alt="featured one">
+                <p></p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+          <p class="copyright">Copyright &copy; 2022 AK
+            <br>Designed by <a rel="nofollow" href="https://www.facebook.com">Abhay Patel</a>
+          </p>
+        </footer>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+{% endblock contact %}

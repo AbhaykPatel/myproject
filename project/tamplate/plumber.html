@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contact %}
+
+<body class="is-preload">
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+      <div class="inner">
+
+        <!-- Header -->
+        <header id="header">
+          <div class="logo">
+            <a href="index.html">Local Service</a>
+          </div>
+        </header>
+
+
+        <!-- Left Image -->
+        <section class="left-image">
+          <h1>Plumber</h1>
+          <br>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="{% static 'assets/img/plumber1.jpg' %}" alt="">
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li>
+                    <p style="font-size: large;color: blue;">Visit Charge : ₹ 250*</p>
+                  </li>
+                  <li>
+                    <h6> ₹ 199 will be charged for 1ST hour.</h6>
+                  </li>
+                  <li>
+                    <h6> ₹ 99 will be charged for next 30 minutes following to 1st hour.</h6>
+                  </li>
+                  <li>
+                    <h6> ₹ 99 will be charged in case of Inspection only.</h6>
+                  </li>
+                  <li>
+                    <h6> Material procurement time will be included in service time.</h6>
+                  </li>
+                  <li>
+                    <h6> Required Material cost is excluded from above cost.</h6>
+                  </li>
+                </ul>
+                <div class="primary-button">
+                  <a href="{% url 'schedule' %}">Booking</a>
+                </div>
+              </div>
+            </div><br>
+            <h6>Its feel disgusting to live with a broken tap, leaky pipe, undone toilet flush or low water pressure
+              during our long showers. But somehow we do live with it or we have to, as we have no idea how to get it
+              fixed. </h6>
+          </div>
+          <br>
+          <h1> Services under plumbing</h1>
+          <div class="row"><br>
+            <div class="col-md-6">
+              <ul>
+                <li>Bathroom fittings installation</li>
+                <li>Kitchen sink installation</li>
+                <li>Water motor installation</li>
+                <li>Bathtub Installations</li>
+                <li>Sewer line connection and cleaning</li>
+                <li>Bathroom Refurbishment</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul>
+                <li>Leaks maintenance</li>
+                <li>Shower Pressure Adjustments</li>
+                <li>Toilet Repairs and Installations</li>
+                <li>Water line connection establishment</li>
+                <li>Water Heater Repairs & Installation</li>
+                <li>Pumps installation and removal</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+
+      <div class="inner">
+
+        <!-- Menu -->
+        <nav id="menu">
+          <ul>
+            <li><a href="{% url 'index' %}">Homepage</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
+          </ul>
+        </nav>
+
+        <!-- Featured Posts -->
+        <div class="featured-posts">
+          <div class="heading">
+            <h2>Featured Posts</h2>
+          </div>
+          <div class="owl-carousel owl-theme">
+            <a href="#">
+              <div class="featured-item">
+                <img src="{% static 'assets/img/home2.jpg' %}" alt="featured one">
+                <p></p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+          <p class="copyright">Copyright &copy; 2022 AK
+            <br>Designed by <a rel="nofollow" href="https://www.facebook.com">Abhay Patel</a>
+          </p>
+        </footer>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+
+{% endblock contact %}
