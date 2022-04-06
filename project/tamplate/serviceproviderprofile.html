@@ -26,13 +26,13 @@
                         <br>
                         <div class="row">
                             <div class="col-md-6">
-                                <form id="contact" action="{% url 'updateprofile' pk=request.session.id %}" method="POST">
+                                <form id="contact" action="" method="POST">
                                     {% csrf_token %}
                                     <div class="row">
                                         <div class="col-md-12">
                                             <fieldset>
                                                 <label for="">Name</label>
-                                                <input name="name" type="text" class="form-control" id="name" required="" value="{{cust.name}}">
+                                                <input name="name" type="text" class="form-control" id="name" required="" value="{{serviceprovider.name}}">
                                             </fieldset>
                                         </div>
                                         
@@ -46,32 +46,39 @@
                                         <div class="col-md-12">
                                             <fieldset>
                                                 <label for="">Phone number</label>
-                                                <input name="phone" type="text" class="form-control" id="number" required="" value="{{cust.phone}}">
+                                                <input name="phone" type="text" class="form-control" id="number" required="" value="{{user.phone}}">
                                             </fieldset>
                                         </div>
 
                                         <div class="col-md-12">
                                             <fieldset>
                                                 <label for="">Address</label>
-                                                <input name="address" type="text" class="form-control" id="address" required="" value="{{cust.address}}">
+                                                <input name="address" type="text" class="form-control" id="address" required="" value="{{serviceprovider.address}}">
                                             </fieldset>
                                         </div>
                                         <div class="col-md-12">
                                             <fieldset>
                                                 <label for="">City</label>
-                                                <input name="city" type="text" class="form-control" id="city" required="" value="{{cust.city}}">
+                                                <input name="city" type="text" class="form-control" id="city" required="" value="{{serviceprovider.city}}">
                                             </fieldset>
                                         </div>
                                         <div class="col-md-12">
                                             <fieldset>
                                                 <label for="">State</label>
-                                                <input name="state" type="text" class="form-control" id="state"required="" value="{{cust.state}}">
+                                                <input name="state" type="text" class="form-control" id="state"required="" value="{{serviceprovider.state}}">
                                             </fieldset>
                                         </div>
                                         <div class="col-md-12">
                                             <fieldset>
                                                 <label for="">PIN code</label>
-                                                <input name="pincode" type="text" class="form-control" id="pin" required="" value="{{cust.pincode}}">
+                                                <input name="pincode" type="text" class="form-control" id="pin" required="" value="{{serviceprovider.pincode}}">
+                                            </fieldset>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <fieldset>
+                                                <label for="">Profile pic</label>
+                                                <input name="pic" type="file" class="form-control" id="pic" required="" value="">
                                             </fieldset>
                                         </div>
 
@@ -87,6 +94,7 @@
                     </div>
                 </section>
 
+                
             </div>
         </div>
 
@@ -103,15 +111,13 @@
                             <ul>
                               <li><a href="{% url 'profile' pk=request.session.id %}">PROFILE</a></li>
                               <li><a href="#">LOGOUT</a></li>
-                              <li><a href="{% url 'servicelist' pk=request.session.id %}">My Wishlist</a></li>
                             </ul>
                         </li>
-                        <li><a href="{% url 'customerindex' %}">Homepage</a></li>
-                        <li><a href="{% url 'about2' %}">About Us</a></li>
-                        <li><a href="{% url 'contact2' %}">Contact Us</a></li>
+                        <li><a href="{% url 'index' %}">Homepage</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
                         <li><a href="{% url 'registerpage' %}">Register</a></li>
                         <li><a href="{% url 'login' %}">LOGIN</a></li>
-                        <li><a href="{% url 'schedule' pk=request.session.id %}">Booking</a></li>
                     </ul>
                 </nav>
 

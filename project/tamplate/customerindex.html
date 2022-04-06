@@ -50,7 +50,7 @@
             <div class="row">
 
               <div class="col-md-4">
-                <a href="{% url 'carpenter' %}">
+                <a href="{% url 'carpenter2' %}">
                   <div class="service-item carpenter-item">
                     <div class="icon"></div>
                     <h4>Carpenter</h4>
@@ -60,7 +60,7 @@
               </div>
 
               <div class="col-md-4">
-                <a href="{% url 'electrician' %}">
+                <a href="{% url 'electrician2' %}">
                   <div class="service-item electrician-item">
                     <div class="icon"></div>
                     <h4>Electrician</h4>
@@ -70,7 +70,7 @@
               </div>
 
               <div class="col-md-4">
-                <a href="{% url 'plumber' %}">
+                <a href="{% url 'plumber2' %}">
                   <div class="service-item plumber-item">
                     <div class="icon"></div>
                     <h4>Plumber</h4>
@@ -80,7 +80,7 @@
               </div>
 
               <div class="col-md-4">
-                <a href="{% url 'mason' %}">
+                <a href="{% url 'mason2' %}">
                   <div class="service-item mason-item">
                     <div class="icon"></div>
                     <h4>Mason Contractor</h4>
@@ -90,7 +90,7 @@
               </div>
 
               <div class="col-md-4">
-                <a href="{% url 'painter' %}">
+                <a href="{% url 'painter2' %}">
                   <div class="service-item paint-item">
                     <div class="icon"></div>
                     <h4>Painter</h4>
@@ -100,7 +100,7 @@
               </div>
 
               <div class="col-md-4">
-                <a href="{% url 'cleaning' %}">
+                <a href="{% url 'cleaning2' %}">
                   <div class="service-item cleaning-item">
                     <div class="icon"></div>
                     <h4>Home Cleaning</h4>
@@ -147,11 +147,20 @@
         <!-- Menu -->
         <nav id="menu">
           <ul>
-            <li><a href="{% url 'index' %}">Homepage</a></li>
-            <li><a href="{% url 'about' %}">About Us</a></li>
-            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <li>
+                <span class="opener">{{request.session.name}}</span>
+                <ul>
+                  <li><a href="{% url 'profile' pk=request.session.id %}">PROFILE</a></li>
+                  <li><a href="#">LOGOUT</a></li>
+                  <li><a href="{% url 'servicelist' pk=request.session.id %}">My Wishlist</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'customerindex' %}">Homepage</a></li>
+            <li><a href="{% url 'about2' %}">About Us</a></li>
+            <li><a href="{% url 'contact2' %}">Contact Us</a></li>
             <li><a href="{% url 'registerpage' %}">Register</a></li>
-            <li><a href="{% url 'login' %}">LOGIN</a></li> 
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
+            <li><a href="{% url 'schedule' pk=request.session.id %}">Booking</a></li>
           </ul>
         </nav>
 

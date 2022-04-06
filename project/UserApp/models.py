@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class UserMaster(models.Model):
+    
     email = models.EmailField(max_length=254)
     password = models.CharField(max_length=50)
     otp = models.IntegerField()
@@ -14,7 +15,7 @@ class UserMaster(models.Model):
         db_table = 'usermaster'
 
 class Customer(models.Model):
-    user_id =   models.ForeignKey(UserMaster,on_delete=models.CASCADE)
+    user_id = models.ForeignKey(UserMaster,on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     phone = models.CharField(max_length=50)
     address = models.CharField(max_length=50)
@@ -25,7 +26,7 @@ class Customer(models.Model):
         db_table = 'customer'
 
 class ServiceProvider(models.Model):
-    user_id =   models.ForeignKey(UserMaster,on_delete=models.CASCADE)
+    user_id = models.ForeignKey(UserMaster,on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     service_name = models.CharField(max_length=50)
     phone = models.CharField(max_length=50)
@@ -37,4 +38,10 @@ class ServiceProvider(models.Model):
     class Meta():
         db_table = 'serviceprovider'
     
-
+class Service(models.Model):
+    user_id = models.ForeignKey(UserMaster,on_delete=models.CASCADE)
+    service_name = models.CharField(max_length=50)
+    service_date = models.DateField()
+    service_time = models.TimeField()
+    class Meta():
+        db_table = 'service'

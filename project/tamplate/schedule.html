@@ -23,50 +23,84 @@
         <section class="contact-form">
           <div class="container-fluid">
             <h1>Booking</h1>
+            {% if msg %}
+              <h4 style="color : green">{{msg}}</h4>
+            {% endif %}
             <br>
             <div class="row">
               <div class="col-md-6">
-                <form id="contact" action="" method="post">
+                <form id="contact" action="{% url 'servicesubmit' pk=request.session.id %}" method="post">
+                  {% csrf_token %}
                   <div class="row">
+
+                    <div class="col-md-12">
+                      <fieldset>
+                        <select name="service_name" id="service" class="form-control">
+                          <option>--Select service--</option>
+                          <option>carpenter</option>
+                          <option>electrician</option>
+                          <option>painter</option>
+                          <option>plumber</option>
+                          <option>cleaning</option>
+                          <option>mason</option>
+                        </select>
+                      </fieldset>
+                    </div><br><br><br>
+
+                    <div class="col-md-12">
+                      <fieldset>
+                        <label for="">name</label>
+                        <input name="name" type="text" class="form-control" id="name" placeholder="name..." required=""
+                          value="{{cust.name}}">
+                      </fieldset>
+                    </div>
+
+                    <div class="col-md-12">
+                      <fieldset>
+                        <label for="">Phone number</label>
+                        <input name="phone" type="text" class="form-control" id="number" required=""
+                          value="{{cust.phone}}">
+                      </fieldset>
+                    </div>
                     
                     <div class="col-md-12">
                       <fieldset>
-                        <input name="name" type="text" class="form-control" id="name" placeholder="name..." required="">
+                        <label for="">Address</label>
+                        <input name="address" type="text" class="form-control" id="address" required=""
+                          value="{{cust.address}}">
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <label for="">City</label>
+                        <input name="city" type="text" class="form-control" id="city" required="" value="{{cust.city}}">
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <label for="">State</label>
+                        <input name="state" type="text" class="form-control" id="state" required=""
+                          value="{{cust.state}}">
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <label for="">PIN code</label>
+                        <input name="pincode" type="text" class="form-control" id="pin" required=""
+                          value="{{cust.pincode}}">
                       </fieldset>
                     </div>
 
                     <div class="col-md-12">
                       <fieldset>
-                        <input name="address" type="text" class="form-control" id="address" placeholder="address..." required="">
-                      </fieldset>
-                    </div>
-
-                    <div class="col-md-12">
-                      <fieldset>
-                        <input name="city" type="text" class="form-control" id="city" placeholder="city..." required="">
-                      </fieldset>
-                    </div>
-
-                    <div class="col-md-12">
-                      <fieldset>
-                        <input name="state" type="text" class="form-control" id="state" placeholder="state..." required="">
-                      </fieldset>
-                    </div>
-
-                    <div class="col-md-12">
-                      <fieldset>
-                        <input name="pincode" type="text" class="form-control" id="pincode" placeholder="PINcode..." required="">
-                      </fieldset>
-                    </div>
-
-                    <div class="col-md-12">
-                      <fieldset>
+                        <label for="">Date</label>
                         <input name="date" type="date" class="form-control" id="date" placeholder="date..." required="">
                       </fieldset>
                     </div>
 
                     <div class="col-md-12">
                       <fieldset>
+                        <label for="">Time</label>
                         <input name="time" type="time" class="form-control" id="time" placeholder="time..." required="">
                       </fieldset>
                     </div>
@@ -101,10 +135,18 @@
         <!-- Menu -->
         <nav id="menu">
           <ul>
-            <li><a href="{% url 'index' %}">Homepage</a></li>
-            <li><a href="{% url 'about' %}">About Us</a></li>
-            <li><a href="{% url 'contact' %}">Contact Us</a></li>
-            <li><a href="{% url 'register' %}">Register</a></li>
+            <li>
+              <span class="opener">{{request.session.name}}</span>
+              <ul>
+                <li><a href="{% url 'profile' pk=request.session.id %}">PROFILE</a></li>
+                <li><a href="#">LOGOUT</a></li>
+                <li><a href="{% url 'servicelist' pk=request.session.id %}">My Wishlist</a></li>
+              </ul>
+            </li>
+            <li><a href="{% url 'customerindex' %}">Homepage</a></li>
+            <li><a href="{% url 'about2' %}">About Us</a></li>
+            <li><a href="{% url 'contact2' %}">Contact Us</a></li>
+            <li><a href="{% url 'registerpage' %}">Register</a></li>
             <li><a href="{% url 'login' %}">LOGIN</a></li>
           </ul>
         </nav>

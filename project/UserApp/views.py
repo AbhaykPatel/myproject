@@ -7,29 +7,51 @@ def index(request):
     return render(request, 'index.html')
 def about(request):
     return render(request, 'about.html')
+def about2(request):
+    return render(request, 'about2.html')
+
 def contact(request):
     return render(request, 'contact.html')
+def contact2(request):
+    return render(request, 'contact2.html')
+
 def login(request):
     return render(request, 'login.html')
 
 def registerpage(request):
     return render(request, 'register.html')
 
+def customerindex(request):
+    return render(request, 'customerindex.html')
+
+
 
 def carpenter(request):
-    return render(request, 'carpenter.html')
+    return render(request, 'service/carpenter.html')
 def cleaning(request):
-    return render(request, 'cleaning.html')
+    return render(request, 'service/cleaning.html')
 def electrician(request):
-    return render(request, 'electrician.html')
+    return render(request, 'service/electrician.html')
 def mason(request):
-    return render(request, 'mason.html')
+    return render(request, 'service/mason.html')
 def painter(request):
-    return render(request, 'painter.html')
+    return render(request, 'service/painter.html')
 def plumber(request):
-    return render(request, 'plumber.html')
-def schedule(request):
-    return render(request, 'schedule.html')
+    return render(request, 'service/plumber.html')
+
+def carpenter2(request):
+    return render(request, 'service_afterlogin/carpenter2.html')
+def cleaning2(request):
+    return render(request, 'service_afterlogin/cleaning2.html')
+def electrician2(request):
+    return render(request, 'service_afterlogin/electrician2.html')
+def mason2(request):
+    return render(request, 'service_afterlogin/mason2.html')
+def painter2(request):
+    return render(request, 'service_afterlogin/painter2.html')
+def plumber2(request):
+    return render(request, 'service_afterlogin/plumber2.html')
+
 
 
 
@@ -120,7 +142,7 @@ def LoginUser(request):
                 request.session['name']=cust.name
                 request.session['email']=user.email
                 request.session['phone']=cust.phone
-                return redirect('index')
+                return redirect('customerindex')
             else:
                 message = "password does not match"
                 return render(request, 'login.html',{'msg':message})
@@ -142,7 +164,7 @@ def LoginUser(request):
                 request.session['name']=servicepro.name
                 request.session['email']=user.email
                 request.session['phone']=servicepro.phone
-                return redirect('index')
+                return redirect('customerindex')
             else:
                 message = "password does not match"
                 return render(request, 'login.html',{'msg':message})
@@ -168,6 +190,69 @@ def UpdateProfile(request,pk):
         cust.save()
         url = f'/profile/{pk}'
         return redirect(url)
+
+def schedule(request,pk):
+    user = UserMaster.objects.get(pk=pk)
+    cust = Customer.objects.get(user_id=user)
+    return render(request, 'schedule.html',{'user':user,'cust':cust})
+
+def ServicePage(request,pk):
+    user = UserMaster.objects.get(pk=pk)
+    if user.role == "Customer":
+        cust = Customer.objects.get(user_id=user)
+        cust.name = request.POST['name']
+        cust.phone = request.POST['phone']
+        cust.address = request.POST['address']
+        cust.city = request.POST['city']
+        cust.state = request.POST['state']
+        cust.pincode = request.POST['pincode']
+        cust.save()
+        url = f'/schedule/{pk}'
+        return redirect(url)
+
+
+def ServiceSubmit(request,pk):
+    user = UserMaster.objects.get(pk=pk)
+    if user.role == "Customer":
+        service = Service.objects.get(user_id=user)
+        service.service_name = request.POST['service_name']
+        service.service_date=request.POST['date']
+        service.service_time=request.POST['time']
+        service.save()
+    
+        newservice = Service.objects.create(user_id=user,service_name=service_name,service_date=service_date,service_time=service_time)
+        
+        message = "Service Added Successfully"
+        
+        return render(request, 'schedule.html',{'msg':message})
+
+def ServiceList(request,pk):  
+    all_service = Service.objects.all()
+    user = UserMaster.objects.get(pk=pk)
+    if user.role == "Customer":
+        cust = Customer.objects.get(user_id=user)
+        return render(request, 'service_list.html',{'allservice':all_service,'user':user,'cust':cust})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
 
 
 

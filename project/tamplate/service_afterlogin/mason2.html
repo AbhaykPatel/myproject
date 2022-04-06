@@ -21,12 +21,12 @@
 
         <!-- Left Image -->
         <section class="left-image">
-          <h1>Plumber</h1>
+          <h1>Mason-Contractor</h1>
           <br>
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-6">
-                <img src="{% static 'assets/img/plumber1.jpg' %}" alt="">
+                <img src="{% static 'assets/img/mason.jpg' %}" alt="">
               </div>
               <div class="col-md-6">
                 <ul>
@@ -50,35 +50,35 @@
                   </li>
                 </ul>
                 <div class="primary-button">
-                  <a href="{% url 'schedule' %}">Booking</a>
+                  <a href="{% url 'schedule' pk=request.session.id %}">Booking</a>
                 </div>
               </div>
             </div><br>
-            <h6>Its feel disgusting to live with a broken tap, leaky pipe, undone toilet flush or low water pressure
-              during our long showers. But somehow we do live with it or we have to, as we have no idea how to get it
-              fixed. </h6>
+            <h6>Masonry service is directly related to build or refurbished an already build home. It comprises from top
+                to bottom applications during any renovation in your home or office. Either establishment of modular
+                bathroom or want to build a modular boundrywall in front entry, you require a mason to do all this.</h6>
           </div>
           <br>
-          <h1> Services under plumbing</h1>
+          <h1> Services under mason contractor</h1>
           <div class="row"><br>
             <div class="col-md-6">
               <ul>
-                <li>Bathroom fittings installation</li>
-                <li>Kitchen sink installation</li>
-                <li>Water motor installation</li>
-                <li>Bathtub Installations</li>
-                <li>Sewer line connection and cleaning</li>
-                <li>Bathroom Refurbishment</li>
+                <li>Floor refurbishment</li>
+                <li>Plaster</li>
+                <li>Renovation</li>
+                <li>Bathroom modification</li>
+                <li>Kitchen modification</li>
+                <li>Wall modification</li>
               </ul>
             </div>
             <div class="col-md-6">
               <ul>
-                <li>Leaks maintenance</li>
-                <li>Shower Pressure Adjustments</li>
-                <li>Toilet Repairs and Installations</li>
-                <li>Water line connection establishment</li>
-                <li>Water Heater Repairs & Installation</li>
-                <li>Pumps installation and removal</li>
+                <li>Interior and exterior maintenance</li>
+                <li>Portico adjustment</li>
+                <li>New design implementation in old home</li>
+                <li>Sewage solutions</li>
+                <li>Drainage arrangement</li>
+                <li>Stair modification</li>
               </ul>
             </div>
           </div>
@@ -97,7 +97,7 @@
             <li><a href="{% url 'index' %}">Homepage</a></li>
             <li><a href="{% url 'about' %}">About Us</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
-            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'registerpage' %}">Register</a></li>
             <li><a href="{% url 'login' %}">LOGIN</a></li>
           </ul>
         </nav>
@@ -128,6 +128,7 @@
     </div>
 
   </div>
+
 </body>
 
 {% endblock contact %}

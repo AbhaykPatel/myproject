@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contact %}
+
+<body class="is-preload">
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+      <div class="inner">
+
+        <!-- Header -->
+        <header id="header">
+          <div class="logo">
+            <a href="index.html">Local Service</a>
+          </div>
+        </header>
+
+
+        <!-- Left Image -->
+        <section class="left-image">
+          <h1>Mason-Contractor</h1>
+          <br>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="{% static 'assets/img/mason.jpg' %}" alt="">
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li>
+                    <p style="font-size: large;color: blue;">Visit Charge : ₹ 250*</p>
+                  </li>
+                  <li>
+                    <h6> ₹ 199 will be charged for 1ST hour.</h6>
+                  </li>
+                  <li>
+                    <h6> ₹ 99 will be charged for next 30 minutes following to 1st hour.</h6>
+                  </li>
+                  <li>
+                    <h6> ₹ 99 will be charged in case of Inspection only.</h6>
+                  </li>
+                  <li>
+                    <h6> Material procurement time will be included in service time.</h6>
+                  </li>
+                  <li>
+                    <h6> Required Material cost is excluded from above cost.</h6>
+                  </li>
+                </ul>
+                <div class="primary-button">
+                  <a href="{% url 'login' %}">Booking</a>
+                </div>
+              </div>
+            </div><br>
+            <h6>Masonry service is directly related to build or refurbished an already build home. It comprises from top
+                to bottom applications during any renovation in your home or office. Either establishment of modular
+                bathroom or want to build a modular boundrywall in front entry, you require a mason to do all this.</h6>
+          </div>
+          <br>
+          <h1> Services under mason contractor</h1>
+          <div class="row"><br>
+            <div class="col-md-6">
+              <ul>
+                <li>Floor refurbishment</li>
+                <li>Plaster</li>
+                <li>Renovation</li>
+                <li>Bathroom modification</li>
+                <li>Kitchen modification</li>
+                <li>Wall modification</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul>
+                <li>Interior and exterior maintenance</li>
+                <li>Portico adjustment</li>
+                <li>New design implementation in old home</li>
+                <li>Sewage solutions</li>
+                <li>Drainage arrangement</li>
+                <li>Stair modification</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+
+      <div class="inner">
+
+        <!-- Menu -->
+        <nav id="menu">
+          <ul>
+            <li><a href="{% url 'index' %}">Homepage</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <li><a href="{% url 'registerpage' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
+          </ul>
+        </nav>
+
+        <!-- Featured Posts -->
+        <div class="featured-posts">
+          <div class="heading">
+            <h2>Featured Posts</h2>
+          </div>
+          <div class="owl-carousel owl-theme">
+            <a href="#">
+              <div class="featured-item">
+                <img src="{% static 'assets/img/home2.jpg' %}" alt="featured one">
+                <p></p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+          <p class="copyright">Copyright &copy; 2022 AK
+            <br>Designed by <a rel="nofollow" href="https://www.facebook.com">Abhay Patel</a>
+          </p>
+        </footer>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+{% endblock contact %}

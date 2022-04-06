@@ -21,12 +21,12 @@
 
                 <!-- Left Image -->
                 <section class="left-image">
-                    <h1>Painter Services</h1>
+                    <h1>Home-Cleaning</h1>
                     <br>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
-                                <img src="{% static 'assets/img/painter.jpg' %}" alt="">
+                                <img src="{% static 'assets/img/cleaning.jpg' %}" alt="">
                             </div>
                             <div class="col-md-6">
                                 <ul>
@@ -50,36 +50,30 @@
                                     </li>
                                 </ul>
                                 <div class="primary-button">
-                                    <a href="{% url 'schedule' %}">Booking</a>
+                                    <a href="{% url 'schedule' pk=request.session.id %}">Booking</a>
                                 </div>
                             </div>
                         </div><br>
-                        <h6>Painting doesn’t stand for the paintings that you used to hang on guestroom wall  Painting
-                            just evolve
-                            the brightness in your home in put the rainbow touch in your happiness with soft enamel and
-                            fine brushes.</h6>
+                        <h6>Cleaning to your surrounding keeps you Healthy-wealthy and Prosperous.</h6>
                     </div>
                     <br>
-                    <h1> Services Under Painter Services</h1>
+                    <h1> Services Under home cleaning</h1>
                     <div class="row"><br>
                         <div class="col-md-6">
                             <ul>
-                                <li>White wash</li>
-                                <li>Distemper coating</li>
-                                <li>Waterproof painting</li>
-                                <li>Wall art</li>
-                                <li>Ceiling art</li>
-                                <li>POP treatment</li>
+                                <li>Sweeping</li>
+                                <li>Vacuum cleaning</li>
+                                <li>Mat cleaning</li>
+                                <li>Toilet cleaning</li>
+                                <li>Pre and post marriage compound cleaning</li>
                             </ul>
                         </div>
                         <div class="col-md-6">
                             <ul>
-                                <li>Wood painting</li>
-                                <li>Door and furniture painting</li>
-                                <li>Boundary wall painting</li>
-                                <li>Creative decoration using paints</li>
-                                <li>Building painting</li>
-                                <li>oil painting</li>
+                                <li>Hotel cleaning</li>
+                                <li>Dishwashing</li>
+                                <li>Floor mopping</li>
+                                <li>Garden cleaning</li>
                             </ul>
                         </div>
                     </div>
@@ -98,7 +92,7 @@
                         <li><a href="{% url 'index' %}">Homepage</a></li>
                         <li><a href="{% url 'about' %}">About Us</a></li>
                         <li><a href="{% url 'contact' %}">Contact Us</a></li>
-                        <li><a href="{% url 'register' %}">Register</a></li>
+                        <li><a href="{% url 'registerpage' %}">Register</a></li>
                         <li><a href="{% url 'login' %}">LOGIN</a></li>
                     </ul>
                 </nav>
@@ -127,9 +121,7 @@
 
             </div>
         </div>
-
     </div>
-
 </body>
 
 {% endblock contact %}

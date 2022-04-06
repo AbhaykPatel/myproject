@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contact %}
+
+<body class="is-preload">
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+      <div class="inner">
+
+        <!-- Header -->
+        <header id="header">
+          <div class="logo">
+            <a href="index.html">Local Service</a>
+          </div>
+        </header>
+
+        <!-- Tables -->
+        <section class="tables">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="section-heading">
+                  <h2>Tables</h2>
+                </div>
+                <div class="default-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Service</th>
+                        <th>name</th>
+                        <th>Phone number</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>PIN code</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                      </tr>
+                    </thead>
+
+                    {% if all_service %}
+                    <tbody>
+                      {% for service in allservice %}
+                      <tr>
+                        <td>{{service.service_name}}</td>
+                        <td>{{service.name}}</td>
+                        <td>{{service.phone}}</td>
+                        <td>{{service.address}}</td>
+                        <td>{{service.city}}</td>
+                        <td>{{service.state}}</td>
+                        <td>{{service.pincode}}</td>
+                        <td>{{service.date}}</td>
+                        <td>{{service.time}}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                    {% endif %}
+                  </table>
+                  <ul class="table-pagination">
+                    <li><a href="#">Previous</a></li>
+                    <li><a href="#">Next</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+
+      <div class="inner">
+        <!-- Menu -->
+        <nav id="menu">
+          <ul>
+            <li>
+              <span class="opener">{{request.session.name}}</span>
+              <ul>
+                <li><a href="{% url 'profile' pk=request.session.id %}">PROFILE</a></li>
+                <li><a href="#">LOGOUT</a></li>
+              </ul>
+            </li>
+            <li><a href="{% url 'index' %}">Homepage</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <li><a href="{% url 'registerpage' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
+          </ul>
+        </nav>
+
+        <!-- Featured Posts -->
+        <div class="featured-posts">
+          <div class="heading">
+            <h2>Featured Posts</h2>
+          </div>
+          <div class="owl-carousel owl-theme">
+            <a href="#">
+              <div class="featured-item">
+                <img src="{% static 'assets/img/home2.jpg' %}" alt="featured one">
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- Footer -->
+        <footer id="footer">
+          <p class="copyright">Copyright &copy; 2022 AK
+            <br>Designed by <a rel="nofollow" href="https://www.facebook.com">Abhay Patel</a>
+          </p>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+
+{% endblock contact %}

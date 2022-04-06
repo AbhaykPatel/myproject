@@ -60,11 +60,20 @@
         <!-- Menu -->
         <nav id="menu">
           <ul>
-            <li><a href="{% url 'index' %}">Homepage</a></li>
-            <li><a href="{% url 'about' %}">About Us</a></li>
-            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <li>
+                <span class="opener">{{request.session.name}}</span>
+                <ul>
+                  <li><a href="{% url 'profile' pk=request.session.id %}">PROFILE</a></li>
+                  <li><a href="#">LOGOUT</a></li>
+                  <li><a href="{% url 'servicelist' pk=request.session.id %}">My Wishlist</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'customerindex' %}">Homepage</a></li>
+            <li><a href="{% url 'about2' %}">About Us</a></li>
+            <li><a href="{% url 'contact2' %}">Contact Us</a></li>
             <li><a href="{% url 'registerpage' %}">Register</a></li>
             <li><a href="{% url 'login' %}">LOGIN</a></li>
+            <li><a href="{% url 'schedule' pk=request.session.id %}">Booking</a></li>
           </ul>
         </nav>
 
